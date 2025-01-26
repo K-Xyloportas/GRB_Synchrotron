@@ -70,8 +70,8 @@ def Fx_sim_test(xx,bb):
 
 
 # Instant injection of monoenergetic particles
-def N_instant_mono(g,Q,g_star):
-    return Q*(g_star/g)**2
+def N_instant_mono(Q):
+    return Q
 
 # Continuous injection of monoenergetic particles
 def N_constant_mono(g,Q,A):
@@ -408,7 +408,7 @@ def Jsyn_constant_pl(v,t,Q,B,p,gmin,gmax):
 # In[ ]:
 
 
-# L(t) calculation with: integral.simpson + log(v), the fastest method (for now)
+# L(t) calculation with: integral.simpson + log(v), a fast method
 def Luminosity_instant_pl(t,vmin,vmax,Q,B,p,gmin,gmax):
     A = (st*(B**2))/(6*m*c*np.pi)
     #vnew_s = np.linspace(np.log10(vmin), np.log10(vmax), 200) # linspace (slower)
